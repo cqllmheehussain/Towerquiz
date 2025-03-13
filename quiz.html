@@ -1,0 +1,32 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Tower College</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startQuiz()">
+
+    <div class="container">
+        <h2 id="quiz-title"></h2>
+        <p><strong>Time Left: <span id="timer">25:00</span></strong></p>
+
+        <div id="question-container">
+            <h3 id="question-text"></h3>
+            <ul id="options-list"></ul>
+        </div>
+
+        <button id="prev-btn" onclick="prevQuestion()">Previous</button>
+        <button id="next-btn" onclick="nextQuestion()">Next</button>
+        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+
+        <label>
+            <input type="checkbox" id="voice-toggle" onchange="toggleVoice()"> Enable Voice Reader
+        </label>
+    </div>
+
+    <script src="quiz.js"></script>
+
+</body>
+</html>

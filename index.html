@@ -1,0 +1,73 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower College Quiz System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <img src="college-logo.png" alt="College Logo" class="logo">
+        
+        <marquee>WELCOME TO TOWER COLLEGE QUIZ SYSTEM</marquee>
+
+        <h2>Enter Your Details to Start the Quiz</h2>
+        
+        <form id="studentForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="matric">Matric No:</label>
+            <input type="text" id="matric" required>
+
+            <label for="department">Department:</label>
+            <select id="department" required>
+                <option value="">Select Department</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Nursing Science">Nursing Science</option>
+                <option value="International Relations">International Relations</option>
+                <option value="Public Administration">Public Administration</option>
+                <!-- Add more departments here -->
+            </select>
+
+            <label for="level">Level:</label>
+            <select id="level" required>
+                <option value="">Select Level</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+            </select>
+
+            <button type="button" onclick="startQuiz()">Start Quiz</button>
+        </form>
+    </div>
+
+    <script>
+        function startQuiz() {
+            let name = document.getElementById("name").value;
+            let matric = document.getElementById("matric").value;
+            let department = document.getElementById("department").value;
+            let level = document.getElementById("level").value;
+
+            if (name === "" || matric === "" || department === "" || level === "") {
+                alert("Please fill all fields before starting the quiz.");
+                return;
+            }
+
+            // Store student info in localStorage
+            localStorage.setItem("studentName", name);
+            localStorage.setItem("matricNo", matric);
+            localStorage.setItem("department", department);
+            localStorage.setItem("level", level);
+
+            // Redirect to quiz page
+            window.location.href = "quiz.html";
+        }
+    </script>
+
+</body>
+</html>
